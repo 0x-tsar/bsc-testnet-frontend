@@ -1,5 +1,5 @@
 import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import styles from "../../styles/Home.module.css";
 
 import React, { useState, useEffect } from "react";
 import getBlockchain from "../ethereum";
@@ -39,22 +39,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* Hello there from Solidity :) */}
+      <div>
+        <h2>Data:</h2>
+        <p>{data.toString()}</p>
+      </div>
+      <div>
+        <h2>Change data</h2>
 
-      
-        <div>
-          <h2>Data:</h2>
-          <p>{data.toString()}</p>
-        </div>
-
-        <div>
-          <h2>Change data</h2>
-          <form  onSubmit={(e) => updateData(e)}>
-            <input type="text"  placeholder="data" />
-            <button type="submit">
-              Submit
-            </button>
-          </form>
-        </div>
+        <form onSubmit={(e) => updateData(e)}>
+          <input type="text" placeholder="data" />
+          <button type="submit">Submit</button>
+        </form>
       </div>
     </div>
   );

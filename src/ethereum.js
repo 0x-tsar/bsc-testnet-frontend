@@ -1,6 +1,6 @@
 import detectEthereumProvider from "@metamask/detect-provider";
 import { ethers, Contract } from "ethers";
-import SimpleStorage from "../contracts/SimpleStorage.json";
+import SimpleStorage from "./contracts/SimpleStorage.json";
 
 const getBlockchain = () =>
   new Promise(async (resolve, reject) => {

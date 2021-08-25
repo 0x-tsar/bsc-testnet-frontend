@@ -1,6 +1,5 @@
 const HDWalletProvider = require("@truffle/hdwallet-provider");
-const mnemonic =
-  "83e49fffe42248eab451fd146606feef64a44f00671688fd2049ad7fe59f7886";
+const mnemonic = process.env.mnemonic;
 
 /**
  * Use this file to configure your truffle project. It's seeded with some
@@ -47,13 +46,15 @@ module.exports = {
     // options below to some value.
     //
 
-    provider: () =>
-      new HDWalletProvider(
-        mnemonic,
-        "https://data-seed-prebsc-1-s1.binance.org:8545"
-      ),
-    network_id: 97,
-    skipDryRun: true,
+    bscTest: {
+      provider: () =>
+        new HDWalletProvider(
+          mnemonic,
+          "https://data-seed-prebsc-1-s1.binance.org:8545"
+        ),
+      network_id: 97,
+      skipDryRun: true,
+    },
 
     // development: {
     //  host: "127.0.0.1",     // Localhost (default: none)
